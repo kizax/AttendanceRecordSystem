@@ -1,38 +1,345 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical" >
+    android:orientation="vertical"
+    android:paddingLeft="10dp"
+    android:paddingRight="10dp" >
 
     <TextView
         android:id="@+id/gradeText"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="35.5dp"
-        android:textSize="23sp" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="15dp"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="0"
+        android:textColor="#e52b50"
+        android:textSize="25sp" >
+    </TextView>
+
+    <TextView
+        android:id="@+id/gradeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gradeText"
+        android:layout_toRightOf="@+id/gradeText"
+        android:padding="0dp"
+        android:text="年"
+        android:textSize="17sp" >
     </TextView>
 
     <TextView
         android:id="@+id/classText"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:padding="35.5dp"
-        android:textSize="23sp" >
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gradeText"
+        android:layout_toRightOf="@+id/gradeLabel"
+        android:paddingLeft="15dp"
+        android:paddingRight="15dp"
+        android:text="0"
+        android:textColor="#e52b50"
+        android:textSize="25sp" >
     </TextView>
 
-    <Button
-        android:id="@+id/plusButton"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="+" >
-    </Button>
-    
-    <Button
-        android:id="@+id/minusButton"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:text="-" >
-    </Button>
+    <TextView
+        android:id="@+id/classLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/gradeText"
+        android:layout_toRightOf="@+id/classText"
+        android:padding="0dp"
+        android:text="班"
+        android:textSize="17sp" >
+    </TextView>
 
-</LinearLayout>
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/gradeText"
+        android:layout_marginTop="7dp"
+        android:orientation="vertical"
+        android:paddingTop="2dp" >
+
+        <LinearLayout
+            android:id="@+id/outOfOfficeLayOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" >
+
+            <TextView
+                android:id="@+id/outOfOfficeLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="公假"
+                android:textColor="#104031"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/outOfOfficeText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#1560bd"
+                android:textSize="25sp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp" >
+
+                <Button
+                    android:id="@+id/outOfOfficePlusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/outOfOfficeMinusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/outOfOfficePlusButton"
+                    android:layout_toRightOf="@+id/outOfOfficePlusButton"
+                    android:paddingLeft="3dp"
+                    android:text="-"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/sickDayLayOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/outOfOfficeLayOut"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" >
+
+            <TextView
+                android:id="@+id/sickDayLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="病假"
+                android:textColor="#104031"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/sickDayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#1560bd"
+                android:textSize="25sp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp" >
+
+                <Button
+                    android:id="@+id/sickDayPlusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/sickDayMinusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/sickDayPlusButton"
+                    android:layout_toRightOf="@+id/sickDayPlusButton"
+                    android:paddingLeft="3dp"
+                    android:text="-"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/personalDayLayOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/sickDayLayOut"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" >
+
+            <TextView
+                android:id="@+id/personalDayLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="事假"
+                android:textColor="#104031"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/personalDayText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#1560bd"
+                android:textSize="25sp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp" >
+
+                <Button
+                    android:id="@+id/personalDayPlusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/personalDayMinusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/personalDayPlusButton"
+                    android:layout_toRightOf="@+id/personalDayPlusButton"
+                    android:paddingLeft="3dp"
+                    android:text="-"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/unknownLayOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/personalDayLayOut"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" >
+
+            <TextView
+                android:id="@+id/unknownLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="不明"
+                android:textColor="#104031"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/unknownText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#1560bd"
+                android:textSize="25sp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp" >
+
+                <Button
+                    android:id="@+id/unknownPlusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/unknownMinusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/unknownPlusButton"
+                    android:layout_toRightOf="@+id/unknownPlusButton"
+                    android:paddingLeft="3dp"
+                    android:text="-"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/arriveLateLayOut"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_toRightOf="@+id/unknownLayOut"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingLeft="2dp"
+            android:paddingRight="2dp" >
+
+            <TextView
+                android:id="@+id/arriveLateLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="5dp"
+                android:text="遲到"
+                android:textColor="#89124e"
+                android:textSize="15sp" >
+            </TextView>
+
+            <TextView
+                android:id="@+id/arriveLateText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:padding="5dp"
+                android:text="0"
+                android:textColor="#e51f83"
+                android:textSize="25sp" >
+            </TextView>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="0dp" >
+
+                <Button
+                    android:id="@+id/arriveLatePlusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:text="+"
+                    android:textSize="10sp" />
+
+                <Button
+                    android:id="@+id/arriveLateMinusButton"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_alignBaseline="@+id/arriveLatePlusButton"
+                    android:layout_toRightOf="@+id/arriveLatePlusButton"
+                    android:paddingLeft="3dp"
+                    android:text="-"
+                    android:textSize="10sp" />
+            </RelativeLayout>
+        </LinearLayout>
+    </RelativeLayout>
+
+</RelativeLayout>

@@ -1,11 +1,14 @@
 package edu.tcfsh.attendanceRecordSystem;
 
 
+import java.util.Calendar;
+
 import edu.tcfsh.attendanceRecordSystem.R;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
@@ -22,6 +25,7 @@ public class MainActivity extends Activity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 		initialize();
+		initializeDatePicker();
 		setListener();
 
 	}
@@ -29,6 +33,17 @@ public class MainActivity extends Activity {
 	private void initialize() {
 		datePicker = (DatePicker) findViewById(R.id.datePicker);
 		confirmButton = (Button) findViewById(R.id.buttonConfirm);
+
+	}
+	
+	private void initializeDatePicker() {
+		Calendar cal=Calendar.getInstance();
+
+		int year=cal.get(Calendar.YEAR);
+		int month=cal.get(Calendar.MONTH);
+		int day=cal.get(Calendar.DAY_OF_MONTH);
+
+		datePicker.updateDate(year, month, day);
 
 	}
 	
@@ -43,9 +58,10 @@ public class MainActivity extends Activity {
 			Intent intent = new Intent();
 			intent.setClass(MainActivity.this, ExperimentUpDownActivity.class);
 			Bundle bundle = new Bundle();
-			bundle.putString("DayOfMonth", Integer.toString(datePicker.getDayOfMonth()));
-			bundle.putString("Month", Integer.toString(datePicker.getMonth()));
-			bundle.putString("Year", Integer.toString(datePicker.getYear()));
+			
+			bundle.putInt("DayOfMonth", datePicker.getDayOfMonth());
+			bundle.putInt("Month", datePicker.getMonth());
+			bundle.putInt("Year", datePicker.getYear());
 
 			intent.putExtras(bundle);
 			startActivity(intent);
