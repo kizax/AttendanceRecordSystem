@@ -24,7 +24,7 @@
         </TextView>
 
         <Button
-            android:id="@+id/EnterButton"
+            android:id="@+id/commitButton"
             android:layout_width="60dp"
             android:layout_height="40dp"
             android:layout_alignParentRight="true"

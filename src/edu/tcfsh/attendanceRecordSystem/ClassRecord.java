@@ -23,14 +23,13 @@ public class ClassRecord {
 	}
 
 	public String getRecord(){
-		String record = String.format("%1$d, %2$d, %3$d, %4$d, %5$d, %6$d, %7$d%n",  grade,
+		String record = String.format("%1$d%2$02d, %3$d, %4$d, %5$d, %6$d, %7$d\n",  grade,
 				classNum,
 				outOfOfficeNum,
 				sickDayNum,
 				personalDayNum,
 				unknownNum,
 				arriveLateNum );
-		Log.d("kizax",record);
 
 		return record;
 	}

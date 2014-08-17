@@ -60,9 +60,9 @@ public class MainActivity extends Activity {
 			Bundle bundle = new Bundle();
 			
 			bundle.putInt("DayOfMonth", datePicker.getDayOfMonth());
-			bundle.putInt("Month", datePicker.getMonth());
+			bundle.putInt("Month", datePicker.getMonth()+1);
 			bundle.putInt("Year", datePicker.getYear());
-
+			
 			intent.putExtras(bundle);
 			startActivity(intent);
 			MainActivity.this.finish();

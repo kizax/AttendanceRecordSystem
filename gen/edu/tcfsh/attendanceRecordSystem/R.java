@@ -26,7 +26,6 @@ public final class R {
         public static final int press=0x7f020004;
     }
     public static final class id {
-        public static final int EnterButton=0x7f090001;
         public static final int arriveLateLabel=0x7f090022;
         public static final int arriveLateLayOut=0x7f090021;
         public static final int arriveLateMinusButton=0x7f090025;
@@ -35,6 +34,7 @@ public final class R {
         public static final int buttonConfirm=0x7f090005;
         public static final int classLabel=0x7f09000c;
         public static final int classText=0x7f09000b;
+        public static final int commitButton=0x7f090001;
         public static final int datePicker=0x7f090004;
         public static final int gradeLabel=0x7f09000a;
         public static final int gradeText=0x7f090009;
