@@ -4,18 +4,19 @@ package edu.tcfsh.attendanceRecordSystem;
 import java.util.Calendar;
 
 import edu.tcfsh.attendanceRecordSystem.R;
-
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.Toast;
 
 
-public class MainActivity extends Activity {
+public class SetDateActivity extends Activity {
 
 	private DatePicker datePicker;
 	private Button confirmButton;
@@ -23,7 +24,7 @@ public class MainActivity extends Activity {
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.activity_main);
+		setContentView(R.layout.activity_set_date);
 		initialize();
 		initializeDatePicker();
 		setListener();
@@ -52,11 +53,12 @@ public class MainActivity extends Activity {
 		
 	}
 
+
 	private Button.OnClickListener buttonConfirmClickListener = new Button.OnClickListener(){
 		@Override
 		public void onClick(View v){
 			Intent intent = new Intent();
-			intent.setClass(MainActivity.this, ExperimentUpDownActivity.class);
+			intent.setClass(SetDateActivity.this, RecordAttendanceActivity.class);
 			Bundle bundle = new Bundle();
 			
 			bundle.putInt("DayOfMonth", datePicker.getDayOfMonth());
@@ -65,7 +67,8 @@ public class MainActivity extends Activity {
 			
 			intent.putExtras(bundle);
 			startActivity(intent);
-			MainActivity.this.finish();
+			SetDateActivity.this.finish();
+			confirmButton.setOnClickListener(buttonConfirmClickListener);
 		}
 	};
 	

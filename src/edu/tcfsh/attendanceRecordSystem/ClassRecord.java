@@ -33,6 +33,13 @@ public class ClassRecord {
 
 		return record;
 	}
+	
+	public String getGradeAndClass() {
+		String gradeAndClass = String.format("%1$d%2$02d",  grade,
+				classNum);
+
+		return gradeAndClass;
+	}
 
 	public int getGrade() {
 		return grade;
