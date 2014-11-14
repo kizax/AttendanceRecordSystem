@@ -1,7 +1,8 @@
-package edu.tcfsh.attendanceRecordSystem;
+package edu.tcfsh.recordAttendanceSystem;
 
 import java.util.ArrayList;
 
+import edu.tcfsh.attendanceRecordSystem.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,4 +1,4 @@
-package edu.tcfsh.attendanceRecordSystem;
+package edu.tcfsh.recordAttendanceSystem;
 
 
 import java.util.Calendar;

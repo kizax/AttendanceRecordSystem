@@ -1,4 +1,4 @@
-package edu.tcfsh.attendanceRecordSystem;
+package edu.tcfsh.recordAttendanceSystem;
 
 import edu.tcfsh.attendanceRecordSystem.R;
 

@@ -1,4 +1,4 @@
-package edu.tcfsh.attendanceRecordSystem;
+package edu.tcfsh.recordAttendanceSystem;
 
 import android.widget.Button;
 import android.widget.TextView;
