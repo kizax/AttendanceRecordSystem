@@ -1,9 +1,9 @@
-package edu.tcfsh.recordAttendanceSystem;
+package edu.tcfsh.recordAttendanceApp;
 
 
 import java.util.Calendar;
 
-import edu.tcfsh.attendanceRecordSystem.R;
+import edu.tcfsh.recordAttendanceApp.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Context;

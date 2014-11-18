@@ -1,6 +1,6 @@
-package edu.tcfsh.recordAttendanceSystem;
+package edu.tcfsh.recordAttendanceApp;
 
-import edu.tcfsh.attendanceRecordSystem.R;
+import edu.tcfsh.recordAttendanceApp.R;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -29,12 +29,10 @@ import android.content.DialogInterface;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.AdapterView.OnItemClickListener;
 
 public class RecordAttendanceActivity extends Activity {
 
