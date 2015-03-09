@@ -130,13 +130,13 @@ public class RecordAttendanceActivity extends Activity {
 		// 指定xls存檔檔名
 		String attendanceRecordFileName = getAttendanceRecordFileName();
 
-		File SDCardpath = Environment.getExternalStorageDirectory();
-		File attendanceRecord = new File(SDCardpath.getAbsolutePath()
+		File downloadPath = Environment.getExternalStorageDirectory();
+		File attendanceRecord = new File(downloadPath.getAbsolutePath()
 				+ "/attendance Record/" + attendanceRecordFileName);
 		// File copyOfAttendanceRecord = new File(SDCardpath.getAbsolutePath()
 		// + "/attendance Record/" + attendanceRecordFileName + "_copy");
 
-		Log.d("kizax", SDCardpath.getAbsolutePath() + "/attendance Record/"
+		Log.d("kizax", downloadPath.getAbsolutePath() + "/attendance Record/"
 				+ attendanceRecordFileName);
 
 		// 檢查路徑是否存在
@@ -205,13 +205,20 @@ public class RecordAttendanceActivity extends Activity {
 
 			}
 
-			writableWorkbook = Workbook.createWorkbook(attendanceRecord);
-			writableSheet = writableWorkbook.createSheet("attendanceRecord", 0);
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (BiffException e) {
 			e.printStackTrace();
 		}
+		
+		try {
+			writableWorkbook = Workbook.createWorkbook(attendanceRecord);
+			writableSheet = writableWorkbook.createSheet("attendanceRecord", 0);
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
 
 	}
 

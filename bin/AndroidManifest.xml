@@ -29,9 +29,6 @@
             android:name="edu.tcfsh.recordAttendanceApp.RecordAttendanceActivity"
             android:label="@string/title_activity_experiment"
             android:theme="@android:style/Theme.Light.NoTitleBar" >
-            <intent-filter>
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
